@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v720xDhDdLc=",
+  "dgSpecHash": "6ShK+gFtVgC5BkCmTG1TJZ3QQCtOlHiMHu9olrFe5e9O7xVcJbtkt0u+5KSX9mJdOKAWxiJfzU4beYGV9LYGPA==",
   "success": true,
-  "projectFilePath": "C:\\Encoding\\ASP\\GetPeople\\GetPeople.csproj",
+  "projectFilePath": "C:\\ENCODING\\ASP_dotNET\\asp-dotnet-api\\GetPeople.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\raulb\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\raulb\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

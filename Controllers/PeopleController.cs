@@ -11,14 +11,14 @@ public class PeopleController : ControllerBase
     [HttpGet("all")]
     public ActionResult<People> GetPeoples()
     {
-        if(Repository.people.Count == 0)
+        if (Repository.people.Count == 0)
         {
             Console.WriteLine(Repository.people.Count);
             return NoContent();
         }
 
         return Ok(Repository.people);
-    } 
+    }
 
     [HttpGet("{id}")]
     public ActionResult<People> Get(int id)
@@ -36,7 +36,33 @@ public class PeopleController : ControllerBase
         }
         Repository.people.Add(person);
         return Ok();
-        
+
+    }
+
+    [HttpPut("update/{id}")]
+    public IActionResult Update(int id, People person)
+    {
+        var personToUpdate = Repository.people.FirstOrDefault(p => p.Id == id);
+        if (personToUpdate == null)
+        {
+            return NotFound("no se encontro el id " + id);
+        }
+
+        personToUpdate.Name = person.Name;
+        return Ok();
+    }
+
+    [HttpDelete("delete/{id}")]
+    public IActionResult Delete(int id)
+    {
+        var personToDelete = Repository.people.FirstOrDefault(p => p.Id == id);
+        if (personToDelete == null)
+        {
+            return NotFound("no se encontro el id " + id);
+        }
+
+        Repository.people.Remove(personToDelete);
+        return Ok();
     }
 }
 
@@ -53,7 +79,7 @@ public class Repository
 
 public class People
 {
-    public int Id { get; set;}
-    public string Name { get; set;}
+    public int Id { get; set; }
+    public string Name { get; set; }
 
 }
