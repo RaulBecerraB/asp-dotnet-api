@@ -30,3 +30,4 @@ C:\Encoding\ASP\GetPeople\obj\Debug\net8.0\refint\GetPeople.dll
 C:\Encoding\ASP\GetPeople\obj\Debug\net8.0\GetPeople.pdb
 C:\Encoding\ASP\GetPeople\obj\Debug\net8.0\GetPeople.genruntimeconfig.cache
 C:\Encoding\ASP\GetPeople\obj\Debug\net8.0\ref\GetPeople.dll
+C:\Encoding\ASP\GetPeople\obj\Debug\net8.0\GetPeople.sourcelink.json
