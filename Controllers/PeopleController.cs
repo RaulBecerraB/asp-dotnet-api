@@ -26,6 +26,18 @@ public class PeopleController : ControllerBase
         var person = Repository.people.FirstOrDefault(p => p.Id == id);
         return person == null ? NotFound("no se encontro el id " + id) : Ok(person);
     }
+
+    [HttpPost("create")]
+    public IActionResult Add(People person)
+    {
+        if (string.IsNullOrEmpty(person.Name))
+        {
+            return BadRequest("");
+        }
+        Repository.people.Add(person);
+        return Ok();
+        
+    }
 }
 
 public class Repository
