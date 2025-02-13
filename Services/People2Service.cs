@@ -3,7 +3,7 @@ using GetPeople.Controllers;
 
 namespace GetPeople.Services;
 
-public class PeopleService : IPeopleService
+public class People2Service : IPeopleService
 {
     public bool Validate(People people)
     {

@@ -3,11 +3,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GetPeople.Controllers;
 
-
 [Route("[controller]")]
 [ApiController]
 public class PeopleController : ControllerBase
 {
+    private readonly IPeopleService _peopleService;
+
+    public PeopleController(IPeopleService peopleService)
+    {
+        _peopleService = peopleService;
+    }
+
     [HttpGet("all")]
     public ActionResult<People> GetPeoples()
     {
@@ -30,9 +36,9 @@ public class PeopleController : ControllerBase
     [HttpPost("create")]
     public IActionResult Add(People person)
     {
-        if (string.IsNullOrEmpty(person.Name))
+        if (!_peopleService.Validate(person))
         {
-            return BadRequest("");
+            return BadRequest("El nombre del usuario no puede estar vacio");
         }
         Repository.people.Add(person);
         return Ok();
